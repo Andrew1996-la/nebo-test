@@ -1,11 +1,19 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from '../api';
 
 const initialState = {
     heroesList: [],
+    error: false,
+    loading: false,
 };
 
 export const getHeroes = createAsyncThunk('heroesSlice/getHeroes', async () => {
-
+    try {
+        const response = await axios.get('people/1/');
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 const heroesSlice = createSlice({
