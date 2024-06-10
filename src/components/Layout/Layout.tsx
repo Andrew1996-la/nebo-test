@@ -3,12 +3,13 @@ import HeroPage from '../../pages/HeroPage/HeroPage';
 import MainPage from '../../pages/MainPage/MainPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 import Header from '../Header/Header';
+import s from './layout.module.css'
 
 const Layout = () => {
     return (
         <>
             <Header />
-            <main>
+            <main className={s.main}>
                 <Routes>
                     <Route path='/' element={<MainPage />} />
                     <Route path='/page:id' element={<HeroPage />} />
