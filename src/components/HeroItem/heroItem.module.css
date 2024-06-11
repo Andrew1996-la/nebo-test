@@ -1,0 +1,9 @@
+@import url(../../colors.css);
+
+.heroItem {
+    border: 1px solid var(--accentLigthColor);
+    border-radius: 4px;
+    padding: 10px;
+    background-color: var(--lightBgColor);
+    cursor: pointer;
+}
