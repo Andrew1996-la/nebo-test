@@ -1,0 +1,16 @@
+@import url(../../colors.css);
+
+.paginationList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.paginationItem {
+    cursor: pointer;
+    border: 1px solid var(--accentLigthColor);
+    padding: 5px;
+    border-radius: 6px;
+}
