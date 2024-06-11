@@ -3,7 +3,7 @@ import heroesSlice from './heroesSlice';
 
 export const store = configureStore({
     reducer: {
-        posts: heroesSlice,
+        heroes: heroesSlice,
     },
 });
 
