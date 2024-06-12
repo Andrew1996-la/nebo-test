@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { HeroType } from '../../store/types';
-import HeroItem from '../HeroItem/HeroItem';
+import HeroItemContainer from '../HeroItem/HeroItemContainer';
 import s from './heroesList.module.css';
 
 type HeroListProps = {
@@ -11,7 +11,7 @@ const HeroList: FC<HeroListProps> = ({ heroList }) => {
     return (
         <div className={s.heroList}>
             {heroList.map((hero: HeroType) => {
-                return <HeroItem key={hero.url} {...hero} />;
+                return <HeroItemContainer key={hero.url} {...hero} />;
             })}
         </div>
     );

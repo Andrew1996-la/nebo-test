@@ -12,7 +12,7 @@ const Layout = () => {
             <main className={s.main}>
                 <Routes>
                     <Route path='/' element={<MainPage />} />
-                    <Route path='/page:id' element={<HeroPage />} />
+                    <Route path='/hero/:name' element={<HeroPage />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes>
             </main>

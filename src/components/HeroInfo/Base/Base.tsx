@@ -1,12 +1,20 @@
 import { FC } from 'react';
-import { HeroType } from '../../store/types';
-import s from './heroItem.module.css';
+import { HeroType } from '../../../store/types';
+import s from '../heroInfo.module.css';
 
-type HeroItemProps = HeroType & {
-    openHeroPage: (name: string) => void;
-};
+type BaseProps = Omit<
+    HeroType,
+    | 'homeworld'
+    | 'films'
+    | 'species'
+    | 'starships'
+    | 'vehicles'
+    | 'url'
+    | 'created'
+    | 'edited'
+>;
 
-const HeroItem: FC<HeroItemProps> = ({
+const Base: FC<BaseProps> = ({
     name,
     birth_year,
     eye_color,
@@ -15,11 +23,10 @@ const HeroItem: FC<HeroItemProps> = ({
     height,
     mass,
     skin_color,
-    openHeroPage,
 }) => {
     return (
-        <div onClick={() => openHeroPage(name)} className={s.heroItem}>
-            <h3>{name}</h3>
+        <div className={s.generalBlock}>
+            <h1>{name}</h1>
             <p>Birth Year: {birth_year}</p>
             <p>Eye Color: {eye_color}</p>
             <p>Gender: {gender}</p>
@@ -30,4 +37,5 @@ const HeroItem: FC<HeroItemProps> = ({
         </div>
     );
 };
-export default HeroItem;
+
+export default Base;
