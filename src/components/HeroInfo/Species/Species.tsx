@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { SpeciesType } from '../../../store/types';
-import s from '../heroInfo.module.css'
+import s from '../heroInfo.module.css';
 
 type SpeciesProps = {
     species: SpeciesType[];
@@ -9,6 +9,7 @@ type SpeciesProps = {
 const Species: FC<SpeciesProps> = ({ species }) => {
     return (
         <div className={s.generalBlock}>
+            <h2 className={s.chapterName}>Species</h2>
             {species.map((specie: SpeciesType) => {
                 return (
                     <div key={specie.url}>
