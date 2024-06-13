@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getHero, resetHero } from '../../store/heroesSlice';
 import { HeroType } from '../../store/types';
+import Loading from '../Loading/Loadint';
 import AboutHero from './AboutHero';
 
 const AboutHeroContainer = () => {
@@ -21,12 +22,10 @@ const AboutHeroContainer = () => {
     }, [name, dispatch]);
 
     if (!hero) {
-        return <p>Loading...</p>;
+        return <Loading />;
     }
 
-    return (
-        <AboutHero hero={hero} goBack={goBack} />
-    );
+    return <AboutHero hero={hero} goBack={goBack} />;
 };
 
 export default AboutHeroContainer;

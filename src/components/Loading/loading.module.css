@@ -1,0 +1,10 @@
+@import url(../../colors.css);
+
+.loading {
+    height: 80;
+    width: 80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 165px);
+}
