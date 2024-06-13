@@ -24,7 +24,13 @@ const PaginationContainer = () => {
         dispatch(getHeroes(currentPage));
     }, [currentPage, dispatch]);
 
-    return <Pagination pagesElem={pagesElem} handleClick={handleClick} />;
+    return (
+        <Pagination
+            currentPage={currentPage}
+            pagesElem={pagesElem}
+            handleClick={handleClick}
+        />
+    );
 };
 
 export default PaginationContainer;

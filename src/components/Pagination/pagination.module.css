@@ -14,3 +14,13 @@
     padding: 5px;
     border-radius: 6px;
 }
+
+.paginationItem:hover {
+    background-color: var(--accentLigthColor);
+    border: 1px solid #f67823;
+}
+
+.paginationItemActive {
+    background-color: var(--accentLigthColor);
+    border: 1px solid #f67823;
+}
