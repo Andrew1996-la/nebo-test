@@ -1,0 +1,21 @@
+.input {
+    height: 35px;
+    width: 400px;
+    border: 1px solid var(--accentLigthColor);
+    background-color: var(--lightBgColor);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: 'Open Sans';
+}
+
+.button {
+    height: 35px;
+    width: auto;
+    border-radius: 4px;
+    border: 1px solid var(--accentLigthColor);
+    padding: 4px 10px;
+    font-family: 'Open Sans';
+    background-color: var(--lightBgColor);
+    margin-left: 20px;
+    cursor: pointer;
+}

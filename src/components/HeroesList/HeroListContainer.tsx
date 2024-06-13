@@ -14,6 +14,10 @@ const HeroListContainer = () => {
         return <>error</>;
     }
 
+    if (heroList.length === 0) {
+        return <div>hero not found</div>;
+    }
+
     return <HeroList heroList={heroList} />;
 };
 

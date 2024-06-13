@@ -33,6 +33,18 @@ export const getHeroes = createAsyncThunk(
     }
 );
 
+export const searchHero = createAsyncThunk(
+    'heroesSlice/searchHero',
+    async (inputValue: string) => {
+        try {
+            const response = await axios.get(`people/?search=${inputValue}`);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+);
+
 export const getHero = createAsyncThunk(
     'heroesSlice/getHero',
     async (name: string) => {
@@ -112,6 +124,17 @@ const heroesSlice = createSlice({
             state.loading = false;
             state.error = true;
         });
+
+        builder.addCase(searchHero.pending, (state: IInitialState) => {
+            state.loading = true;
+        });
+        builder.addCase(
+            searchHero.fulfilled,
+            (state: IInitialState, action) => {
+                state.loading = false;
+                state.heroesList = action.payload.results;
+            }
+        );
     },
 });
 
