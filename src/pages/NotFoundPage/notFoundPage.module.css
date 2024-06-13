@@ -1,0 +1,27 @@
+.button {
+    margin-top: 20px;
+    height: 35px;
+    width: auto;
+    border-radius: 6px;
+    border: 1px solid var(--accentLigthColor);
+    padding: 4px 10px;
+    font-family: 'Open Sans';
+    background-color: var(--lightBgColor);
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.button:hover {
+    background-color: #f4c19d;
+    border: 1px solid #f67823;
+}
+
+.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 300px;
+    font-family: 'Open Sans';
+    gap: 10px;
+}
