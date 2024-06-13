@@ -1,17 +1,19 @@
-import { FC } from "react";
-import { HeroType } from "../../store/types";
-import Base from "../HeroInfo/Base/Base";
-import Films from "../HeroInfo/Films/Films";
-import Species from "../HeroInfo/Species/Species";
-import Starships from "../HeroInfo/Starships/Starships";
-import Vehicles from "../HeroInfo/Vehicles/Vehicles";
+import { FC } from 'react';
+import { HeroType } from '../../store/types';
+import Button from '../Button/Button';
+import Base from '../HeroInfo/Base/Base';
+import Films from '../HeroInfo/Films/Films';
+import Species from '../HeroInfo/Species/Species';
+import Starships from '../HeroInfo/Starships/Starships';
+import Vehicles from '../HeroInfo/Vehicles/Vehicles';
+import s from './aboutHero.module.css';
 
 type AboutHeroProps = {
-    hero: HeroType
-    goBack: () => void
-}
+    hero: HeroType;
+    goBack: () => void;
+};
 
-const AboutHero: FC<AboutHeroProps> = ({hero, goBack}) => {
+const AboutHero: FC<AboutHeroProps> = ({ hero, goBack }) => {
     return (
         <>
             <Base
@@ -30,7 +32,9 @@ const AboutHero: FC<AboutHeroProps> = ({hero, goBack}) => {
                 <Starships starships={hero.starships} />
             )}
             {hero.vehicles.length > 0 && <Vehicles vehicles={hero.vehicles} />}
-            <button onClick={goBack}>Back</button>
+            <Button className={s.button} onClick={goBack}>
+                Back
+            </Button>
         </>
     );
 };

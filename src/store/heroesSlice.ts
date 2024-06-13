@@ -10,6 +10,7 @@ interface IInitialState {
     loading: boolean;
     currentPage: number;
     totalPage: number;
+    history: string[];
 }
 
 const initialState: IInitialState = {
@@ -19,6 +20,7 @@ const initialState: IInitialState = {
     loading: false,
     currentPage: 1,
     totalPage: 0,
+    history: [],
 };
 
 export const getHeroes = createAsyncThunk(
@@ -98,6 +100,13 @@ const heroesSlice = createSlice({
                 hero: null,
             };
         },
+        addToHistory: (state: IInitialState, action) => {
+            if (state.history.includes(action.payload)) return;
+            return {
+                ...state,
+                history: [...state.history, action.payload],
+            };
+        },
     },
     extraReducers(builder) {
         builder.addCase(getHeroes.pending, (state: IInitialState) => {
@@ -138,6 +147,6 @@ const heroesSlice = createSlice({
     },
 });
 
-export const { setPage, resetHero } = heroesSlice.actions;
+export const { setPage, resetHero, addToHistory } = heroesSlice.actions;
 
 export default heroesSlice.reducer;
